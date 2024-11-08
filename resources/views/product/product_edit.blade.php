@@ -51,13 +51,14 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Image</label>
-                                <input type="file" class="form-control" name="image">
+                                <input type="file" class="form-control" name="image" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+                                <div class="my-2">
+                                    @if ($products->image != '')
+                                        <img src="{{ asset('uploads/product') }}/{{ $products->image }}" id="blah" width="200" alt="">
+                                    @endif
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                @if ($products->image != '')
-                                    <img class="w-40" src="{{ asset('uploads/product') }}/{{ $products->image }}" alt="">
-                                @endif
-                            </div>
+                            
                             <div class="mb-3 d-grid">
                                 <button type="submit" class="btn btn-info">Update</button>
                             </div>

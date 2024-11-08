@@ -51,7 +51,10 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Image</label>
-                                <input type="file" class="form-control" name="image">
+                                <input type="file" class="form-control" name="image" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])">
+                                <div class="my-2">
+                                    <img src="" id="blah" width="200" alt="">
+                                </div>
                             </div>
                             <div class="mb-3 d-grid">
                                 <button type="submit" class="btn btn-info">Submit</button>
